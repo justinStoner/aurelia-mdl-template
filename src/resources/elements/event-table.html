@@ -1,0 +1,26 @@
+<template>
+  <table class="mdl-data-table mdl-js-data-table mdl-data-table--selectable mdl-shadow--2dp full-width">
+    <thead>
+      <tr>
+        <th class="mdl-data-table__cell--non-numeric">Event</th>
+        <th class="mdl-data-table__cell--non-numeric">Duration</th>
+        <th class="mdl-data-table__cell--non-numeric">Status</th>
+        <th class="">Registrants</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr repeat.for="item of es.items">
+        <td class="mdl-data-table__cell--non-numeric">
+          ${item.name}
+          <div class="secondary-info">${item.location}</div>
+        </td>
+        <td class="mdl-data-table__cell--non-numeric">
+          ${item.date}
+          <div class="secondary-info">${item.startTime} - ${item.endTime}</div>
+        </td>
+        <td class="mdl-data-table__cell--non-numeric">${item.status}</td>
+        <td>${item.registrants}</td>
+      </tr>
+    </tbody>
+  </table>
+</template>

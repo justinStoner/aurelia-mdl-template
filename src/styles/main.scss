@@ -1,0 +1,44 @@
+html, body{
+    font-family: "Roboto", sans-serif;
+}
+.no-bottom-spacing{
+  padding-bottom: 0px;
+  div.mdl-cell{
+    margin-bottom: 0px;
+  }
+}
+.right{
+  float:right !important;
+}
+.left{
+  float:left !important;
+}
+.full-width{
+  width:100%;
+}
+.secondary-info{
+  color:rgba(0,0,0,.54)
+}
+.btn-icon{
+  i{
+    margin-right: 5px;
+    top: -2px;
+    position: relative;
+  }
+}
+
+.au-data-table-holder{
+
+}
+.au-data-table{
+  box-shadow: none;
+}
+// a.mdl-js-ripple-effect {
+//   display: inline-block;//Important, without that the button won't appear correctly
+//   position: relative; //without it, ripple will be offset
+//
+//   width: 50px; //Same as height, for a perfect circle
+//   height: 50px; // Works with % values too
+//   line-height: 50px; //same as button height, for the text to be centered horizontally
+//   text-align: center; //Center horizontally
+// }
