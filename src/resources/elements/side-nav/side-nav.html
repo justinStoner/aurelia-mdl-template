@@ -5,6 +5,15 @@
     <div class="header">
       <p class="profile">
         <i class="material-icons">account_circle</i>
+        <a class="mdl-navigation__link right" id="settings" style="color:#fff; cursor:pointer">
+          <i class="material-icons" style="font-size:32px;margin-right:0px;">settings</i>
+        </a>
+        <ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect"
+            data-mdl-for="settings">
+          <li class="mdl-menu__item" >Account</li>
+          <li class="mdl-menu__item" >Security</li>
+          <li class="mdl-menu__item" >Logout</li>
+        </ul>
       </p>
       <p class="name">${user.name}</p>
       <p class="email">${user.email}</p>

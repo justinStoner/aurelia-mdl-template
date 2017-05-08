@@ -36,10 +36,10 @@
           <li class="mdl-menu__item" click.trigger="setRows(20)">20</li>
         </ul>
         ${currentIndex+1} - ${currentIndex+service.data.items.length} of ${service.data.totalRecords}
-        <button class="mdl-button mdl-js-button mdl-button--icon" click.delegate="loadItems(currentIndex-rows)">
+        <button class="mdl-button mdl-js-button mdl-button--icon" disabled.bind="currentIndex===0" click.delegate="loadItems(currentIndex-rows)">
           <i class="material-icons">chevron_left</i>
         </button>
-        <button class="mdl-button mdl-js-button mdl-button--icon" click.delegate="loadItems(currentIndex+rows)">
+        <button class="mdl-button mdl-js-button mdl-button--icon" disabled.bind="currentIndex+rows>=service.data.totalRecords"click.delegate="loadItems(currentIndex+rows)">
           <i class="material-icons">chevron_right</i>
         </button>
       </div>

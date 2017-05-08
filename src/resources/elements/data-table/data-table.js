@@ -19,13 +19,11 @@ export class DataTable {
     this.loading=false;
     this.rows=10;
     this.currentIndex=0;
-
-
   }
   attached(){
 
     this.config=models[this.model];
-    this.lastFilters=this.config.filters;
+    this.lastFilters=JSON.parse(JSON.stringify(this.config.filters));
     console.log(this.config);
     console.log(this.filterModal);
     if(!this.data){
@@ -38,7 +36,8 @@ export class DataTable {
     this.currentIndex=index;
     this.loading=true;
     console.log(index, this.rows);
-    this.service.loadItems(index, this.rows).then(res=>{
+    var arr=[].concat(this.lastFilters.filtersBottom, this.lastFilters.filtersLeft, this.lastFilters.filtersRight)
+    this.service.loadItems(index, this.rows, arr).then(res=>{
       console.log(res);
       this.loading=false;
     });
@@ -59,16 +58,12 @@ export class DataTable {
     })
   }
   applyFilters(){
-    this.dialog.open({viewModel: this.filterModal, model:{defaultFilters:this.config.filters, currentFilters:this.lastFilters}})
+    this.dialog.open({viewModel: this.filterModal, model:this.lastFilters})
     .whenClosed(res=>{
       console.log(res);
       if(!res.wasCancelled){
         this.lastFilters=res.output;
-        this.service.loadItems(0, this.rows, res.output).then(response=>{
-          if(response.success){
-            this.loadItems();
-          }
-        })
+        this.loadItems();
       }else{
 
       }

@@ -8,19 +8,19 @@
     <div class="mdl-card__supporting-text">
       <div class="mdl-grid">
         <div class="mdl-cell mdl-cell--6-col mdl-cell--12-col-tablet">
-          <compose repeat.for="filter of model.currentFilters.filtersLeft" view-model="../filters/filter-${filter.type}" model.two-way="filter"></compose>
+          <compose repeat.for="filter of currentFilters.filtersLeft" view-model="../filters/filter-${filter.type}" model.two-way="filter"></compose>
         </div>
         <div class="mdl-cell mdl-cell--6-col mdl-cell--12-col-tablet">
-          <compose repeat.for="filter of model.currentFilters.filtersRight" view-model="../filters/filter-${filter.type}" model.two-way="filter"></compose>
+          <compose repeat.for="filter of currentFilters.filtersRight" view-model="../filters/filter-${filter.type}" model.two-way="filter"></compose>
         </div>
         <div class="mdl-cell mdl-cell--12-col">
-          <compose repeat.for="filter of model.currentFilters.filtersBottom" view-model="../filters/filter-${filter.type}" model.two-way="filter"></compose>
+          <compose repeat.for="filter of currentFilters.filtersBottom" view-model="../filters/filter-${filter.type}" model.two-way="filter"></compose>
         </div>
       </div>
       <div class="mdl-card__actions text-right">
         <button type="button" class='mdl-button mdl-js-button left' click.trigger="clear()">Clear</button>
-         <button type="button" class='mdl-button mdl-js-button' click.trigger="controller.cancel()">Cancel</button>
-         <button type="button" class='mdl-button mdl-js-button mdl-button--primary' click.trigger="controller.ok({filtersBottom:filtersBottom, filtersLeft:filtersLeft, filtersRight: filtersRight})">Ok</button>
+         <button type="button" class='mdl-button mdl-js-button' click.trigger="controller.cancel(model)">Cancel</button>
+         <button type="button" class='mdl-button mdl-js-button mdl-button--primary' click.trigger="controller.ok(currentFilters)">Apply</button>
       </div>
     </div>
 

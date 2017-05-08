@@ -11,13 +11,15 @@ export class EventsFilter {
 
   }
   activate(model){
-    this.model=model;
+    this.currentFilters=model;
+    console.log(model);
 
   }
   attached(){
 
   }
   clear(){
-    this.model.lastFilters=this.model.defaultFilters;
+    console.log(models.events.filters);
+    this.currentFilters=JSON.parse(JSON.stringify(models.events.filters));
   }
 }
