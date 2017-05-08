@@ -1,5 +1,5 @@
 import {inject} from 'aurelia-framework';
-import {AppRouter} from './app-router';
+import {AppRouter} from '../../../app-router';
 @inject(AppRouter)
 export class SideNav {
   constructor(appRouter) {

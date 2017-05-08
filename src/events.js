@@ -1,5 +1,9 @@
 import {inject} from 'aurelia-framework';
 import {EventsService} from './services/events-service';
+
+import {AddEvent} from './resources/elements/modals/add-event';
+import {EventTable} from './resources/elements/tables/events-table';
+import {EventsFilter} from './resources/elements/modals/events-filter';
 @inject(EventsService)
 export class Events {
   constructor(es) {
@@ -7,13 +11,17 @@ export class Events {
     this.events=[];
     this.loading=true;
   }
-  // loadEvents(){
-  //   this.loading=true;
-  //   this.es.loadEvents(0, 10).then(res=>{
-  //     this.events=res;
-  //   })
-  // }
+
   attached(){
-    //this.loadEvents();
+
+  }
+  get addEventVM(){
+    return AddEvent;
+  }
+  get tableVM(){
+    return EventTable;
+  }
+  get filterVM(){
+    return EventsFilter;
   }
 }

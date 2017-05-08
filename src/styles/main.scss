@@ -1,3 +1,4 @@
+@import './variables';
 html, body{
     font-family: "Roboto", sans-serif;
 }
@@ -10,8 +11,14 @@ html, body{
 .right{
   float:right !important;
 }
+.text-right{
+  text-align: right !important
+}
 .left{
   float:left !important;
+}
+.text-left{
+  text-align: left !important
 }
 .full-width{
   width:100%;
@@ -27,18 +34,96 @@ html, body{
   }
 }
 
-.au-data-table-holder{
 
-}
 .au-data-table{
   box-shadow: none;
 }
-// a.mdl-js-ripple-effect {
-//   display: inline-block;//Important, without that the button won't appear correctly
-//   position: relative; //without it, ripple will be offset
-//
-//   width: 50px; //Same as height, for a perfect circle
-//   height: 50px; // Works with % values too
-//   line-height: 50px; //same as button height, for the text to be centered horizontally
-//   text-align: center; //Center horizontally
+
+.c-scrim--date-only{
+  position: fixed;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.541176);
+  opacity: 0;
+  transition: 200ms ease opacity;
+  will-change: opacity;
+
+}
+.c-scrim--date-only--shown{
+  opacity: 1;
+}
+.c-scrim--shown,
+.c-scrim--date-only--shown{
+  z-index: 999;
+}
+.c-datepicker--open{
+  z-index: 1000;
+}
+.c-scrim--date-only--shown+
+.c-datepicker--open{
+  min-height: 500px;
+  .c-datepicker__header-date{
+    height: 84px;
+    .c-datepicker__header-date__month{
+      padding-top: 0px;
+    }
+  }
+  .c-datepicker--show-time,
+  .c-datepicker--show-calendar,
+  .c-datepicker__header-date__time{
+    display: none;
+  }
+}
+.c-datepicker__header-date{
+  span{
+    padding: 16px 0px;
+  }
+  span.c-datepicker__header-date__time{
+    padding-top: 0px;
+  }
+}
+
+.mdl-datepicker-wrapper.is-visible{
+  z-index: 1000;
+}
+
+.mtp-overlay{
+  z-index: 1000;
+  .mtp-actions__ok{
+    color:$c-primary;
+  }
+  .mtp-display {
+    background-color: $c-teal;
+  }
+  .mtp-clock--active {
+    background-color: $c-teal;
+  }
+  .mtp-clock__hand {
+    background-color: $c-teal;
+  }
+  .mtp-clock__center {
+    background-color: $c-teal;
+  }
+  .mtp-meridiem span:hover:not(.mtp-clock--active) {
+    background-color: $c-teal-light;
+  }
+  .mtp-clock__time li:hover:not(.mtp-clock--active) {
+    background-color: $c-teal-light;
+  }
+}
+
+
+ux-dialog-overlay.active{
+  background: rgba(0, 0, 0, 0.541176);
+}
+.hidden{
+  display: none !important;
+}
+// .mdl-selectfield--floating-label.is-dirty,
+// .mdl-selectfield--floating-label.is-focused{
+//   .mdl-selectfield__label{
+//     color:#2196f3 !important;
+//   }
 // }

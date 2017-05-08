@@ -6,22 +6,27 @@ export class EventsService{
   constructor(fakeJax){
     this.fakeJax=fakeJax;
     this.loading=false;
-    this.items=[];
+    this.data={};
+    
   }
 
-  loadEvents(index, rows){
+  loadItems(index, rows, query=false){
     this.loading=true;
     return new Promise((resolve, reject)=>{
-      this.fakeJax.loadItems(index, rows, 'events').then(res=>{
-        this.items=res;
-        console.log(this.items);
+      this.fakeJax.loadItems(index, rows, query, 'events').then(res=>{
+        this.data=res;
+        console.log(this.data);
         this.loading=false;
-        resolve(res);
+        resolve(this.data);
       })
     })
   }
 
-  getEvents(){
-    return this.items.data;
+  createItem(event){
+    return new Promise((resolve, reject)=>{
+      this.fakeJax.createItem(event, 'events').then(res=>{
+        resolve(res);
+      })
+    })
   }
 }

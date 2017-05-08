@@ -9,10 +9,10 @@
       </tr>
     </thead>
     <tbody>
-      <tr repeat.for="item of es.items">
+      <tr repeat.for="item of service.data.items">
         <td class="mdl-data-table__cell--non-numeric">
           ${item.name}
-          <div class="secondary-info">${item.location}</div>
+          <div class="secondary-info">${item.city} | ${item.street}</div>
         </td>
         <td class="mdl-data-table__cell--non-numeric">
           ${item.date}
