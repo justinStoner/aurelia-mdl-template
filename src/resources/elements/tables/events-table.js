@@ -4,9 +4,10 @@ export class EventsTable{
   constructor(){
 
   }
-  activate(service){
+  activate(model){
 
-    this.service=service;
+    this.service=model.service;
+    this.fullList=model.fullList;
   }
   attached(){
 

@@ -14,6 +14,7 @@ export class DataTable {
   @bindable service;
   @bindable tableView;
   @bindable filterModal;
+  @bindable fullList;
   constructor(dialog) {
     this.dialog=dialog;
     this.loading=false;
