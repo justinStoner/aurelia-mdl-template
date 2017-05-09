@@ -67,6 +67,7 @@
       </div>
       <div class="mdl-card__actions text-right">
          <button type="button" class='mdl-button mdl-js-button' click.trigger="controller.cancel()">Cancel</button>
+         <!-- OK passes event onto caller, so far that would be data-table.js  -->
          <button type="button" class='mdl-button mdl-js-button mdl-button--primary' click.trigger="controller.ok(event)">Ok</button>
       </div>
     </div>

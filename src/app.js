@@ -5,6 +5,7 @@ export class App {
   constructor(appRouter) {
     this.appRouter=appRouter;
   }
+  //configures application routing
   configureRouter(config, router){
     config.title="12Twenty";
     config.map([

@@ -1,6 +1,7 @@
 import models from '../models';
 import {inject} from 'aurelia-framework';
 import {FakeAjax} from '../fake-ajax';
+//this class manages and stores all event data
 @inject(FakeAjax)
 export class EventsService{
   constructor(fakeJax){

@@ -3,6 +3,7 @@ import models from '../../../models'
 import {DialogService} from 'aurelia-dialog';
 @inject(DialogService)
 export class DataTable {
+  //bindable properties to configure data table allowing for maximum re use
   @bindable paginate;
   @bindable add;
   @bindable filter;
@@ -43,6 +44,8 @@ export class DataTable {
       this.loading=false;
     });
   }
+
+  //open passed in create view in a modal, if modal wasnt cancelled create item
   createItem(){
     this.dialog.open({viewModel: this.addModal, model:'event'})
     .whenClosed(res=>{
@@ -58,6 +61,7 @@ export class DataTable {
       }
     })
   }
+  //open passed in filter view, if not cancelled load filtered items
   applyFilters(){
     this.dialog.open({viewModel: this.filterModal, model:this.lastFilters})
     .whenClosed(res=>{

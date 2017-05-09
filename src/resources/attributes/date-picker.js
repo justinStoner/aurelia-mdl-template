@@ -1,5 +1,7 @@
 import {inject, bindable} from 'aurelia-framework';
 import MaterialDateTimePicker from 'material-datetime-picker';
+//see time-picker.js
+//only this one must be passed the value it is to change on close
 @inject(Element)
 export class DatePickerCustomAttribute {
   @bindable val

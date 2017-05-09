@@ -5,6 +5,8 @@ export class FakeAjax{
   constructor(){
 
   }
+  //pretends to be an ajax call, if there is no query it waits 500ms to resolve to simulate talking to a server
+  //otherwise it filters a the list based on the passed in query amd then paginates it
   loadItems(index, rows, query, model){
     return new Promise((resolve, reject) => {
       setTimeout(()=>{
@@ -49,6 +51,7 @@ export class FakeAjax{
       }, 500);
     });
   }
+  //creates an item
   createItem(item, model){
     return new Promise((resolve, reject)=>{
       models[model]['data'].unshift(item);
