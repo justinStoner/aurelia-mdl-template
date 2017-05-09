@@ -1,6 +1,5 @@
 import {DialogController} from 'aurelia-dialog';
 import {inject} from 'aurelia-framework';
-import TimePicker from 'material-pickers-time';
 import MaterialDateTimePicker from 'material-datetime-picker';
 import models from 'models'
 @inject(DialogController)
@@ -12,7 +11,6 @@ export class EventsFilter {
   }
   activate(model){
     this.currentFilters=model;
-    console.log(model);
 
   }
   attached(){

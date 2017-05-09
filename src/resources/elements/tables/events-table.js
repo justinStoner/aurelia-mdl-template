@@ -5,7 +5,7 @@ export class EventsTable{
 
   }
   activate(service){
-    console.log(service);
+
     this.service=service;
   }
   attached(){

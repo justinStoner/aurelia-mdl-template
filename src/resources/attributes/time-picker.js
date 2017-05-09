@@ -1,13 +1,15 @@
 import {inject} from 'aurelia-framework';
-import TimePicker from 'material-pickers-time';
-@inject(Element)
+import {TimepickerService} from './timepicker-service';
+@inject(Element, TimepickerService)
 export class TimePickerCustomAttribute {
-  constructor(element) {
+  constructor(element, timepicker) {
     this.element = element;
+    this.timepicker=timepicker;
+    console.log(this.timepicker);
   }
   attached(){
-    const timepicker = new TimePicker();
-    this.element.addEventListener('focus', event => timepicker.openOnInput(event.target));
+
+    this.element.addEventListener('focus', event => this.timepicker.timepicker.openOnInput(event.target));
   }
   valueChanged(newValue, oldValue) {
 

@@ -7,7 +7,7 @@ export class EventsService{
     this.fakeJax=fakeJax;
     this.loading=false;
     this.data={};
-    
+
   }
 
   loadItems(index, rows, query=false){
