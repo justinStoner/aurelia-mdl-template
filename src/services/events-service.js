@@ -10,7 +10,7 @@ export class EventsService{
     this.data={};
 
   }
-
+  //loads events, and sends pagination info and query to ajax class
   loadItems(index, rows, query=false){
     this.loading=true;
     return new Promise((resolve, reject)=>{

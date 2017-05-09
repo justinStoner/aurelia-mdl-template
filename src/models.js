@@ -1,4 +1,6 @@
 export default {
+  //this file contains generated JSON im using for events and some filter information.
+  //The idea for the filter information is to just have a filter modal/element that dynamically configures its filters based on the string modelname that it is passed
   events:{
     filters:{
       filtersLeft:[

@@ -1,5 +1,6 @@
 import environment from './environment';
 
+//this file bootstraps the application
 export function configure(aurelia) {
   aurelia.use
     .standardConfiguration()

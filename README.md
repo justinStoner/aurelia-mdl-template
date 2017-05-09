@@ -6,7 +6,10 @@ nodejs, npm and aurelia-cli
 
 To make changes, you will need to have the aurelia-cli running as it watches your files for changes then transpiles them to ES5 then bundles them
 
-If you do not have the aurelai-cli installed, install it now by running npm install aurelia-cli -g
+If you do not have the aurelai-cli installed, install it with
+```shell
+npm install aurelia-cli -g
+```
 
 now cd to the project folder, and
 ```shell
